@@ -10,9 +10,7 @@ HanLP Analyzer for ElasticSearch
 
 | Plugin version | Elastic version |
 | --- | --- |
-| master | 5.x |
-| 5.2.2 | 5.2.2 |
-
+| master | 5.6.15 |
 安装方式：
 
 方式一
