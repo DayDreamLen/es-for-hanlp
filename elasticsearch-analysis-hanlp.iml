@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.hankcs:hanlp:portable-1.5.3" level="project" />
+    <orderEntry type="library" name="Maven: com.hankcs:hanlp:portable-1.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:5.6.15" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:6.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:6.6.1" level="project" />
