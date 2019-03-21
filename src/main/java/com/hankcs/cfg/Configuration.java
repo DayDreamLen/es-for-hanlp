@@ -49,7 +49,7 @@ public class Configuration {
         this.enablePlaceRecognize = settings.get("enable_place_recognize", "false").equals("true");
         this.enableNameRecognize = settings.get("enable_name_recognize", "true").equals("true");
         this.enableTraditionalChineseMode = settings.get("enable_traditional_chinese_mode", "false").equals("true");
-        this.enableStopDictionary = settings.get("enable_stop_dictionary", "false").equals("true");
+        this.enableStopDictionary = settings.get("enable_stop_dictionary", "true").equals("true");
         this.enablePartOfSpeechTagging = settings.get("enable_part_of_speech_tagging", "false").equals("true");
         Dictionary.initial(this);
     }
