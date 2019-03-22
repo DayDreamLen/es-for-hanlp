@@ -2,6 +2,7 @@ package org.elasticsearch.index.analysis;
 
 import com.hankcs.cfg.Configuration;
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.model.crf.CRFLexicalAnalyzer;
 import com.hankcs.hanlp.seg.CRF.CRFSegment;
 import com.hankcs.hanlp.seg.Dijkstra.DijkstraSegment;
 import com.hankcs.hanlp.seg.NShort.NShortSegment;
@@ -11,6 +12,8 @@ import org.apache.lucene.analysis.Tokenizer;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
 import org.elasticsearch.index.IndexSettings;
+
+import java.io.IOException;
 
 /**
  * Created by Kenn on 2017/3/15.
@@ -83,7 +86,11 @@ public class HanLPTokenizerFactory extends AbstractTokenizerFactory {
                 return new HanLPTokenizer(new DijkstraSegment(), configuration);
             case CRF:
                 configuration.enablePartOfSpeechTagging(true);
-                return new HanLPTokenizer(new CRFSegment(), configuration);
+                try {
+                    return new HanLPTokenizer(new CRFLexicalAnalyzer(), configuration);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             case SPEED:
                 configuration.enableCustomDictionary(false);
                 return new HanLPTokenizer(new DoubleArrayTrieSegment(), configuration);
